@@ -6,7 +6,7 @@ import { Player } from 'src/models/Player';
   providedIn: 'root'
 })
 export class PlayerService {
-  private baseUrl = 'http://localhost:3000/player';
+  private baseUrl = 'https://footyverse-backend.onrender.com/player';
 
   constructor(private http: HttpClient) { }
 
@@ -33,6 +33,6 @@ export class PlayerService {
   uploadAvatar(avatar: File): Observable<{ path: string }> {
     const formData = new FormData();
     formData.append('file', avatar);
-    return this.http.post<{ path: string }>("http://localhost:3000/upload", formData);
+    return this.http.post<{ path: string }>("https://footyverse-backend.onrender.com/upload", formData);
   }
 }
